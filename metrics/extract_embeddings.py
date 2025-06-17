@@ -10,7 +10,7 @@ from config.config_hc import config as cfg
 def main():
     # 1) Load fine-tuned backbone
     model = iresnet50(num_features=cfg.embedding_size, use_se=cfg.SE)
-    ckpt_path = "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/output/headcrease/best_backbone_epoch56.pth"
+    ckpt_path = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/output/best_backbone_epoch15.pth"
     ckpt = torch.load(ckpt_path, map_location='cpu')
     model.load_state_dict(ckpt, strict=False)
     model.eval().cuda()

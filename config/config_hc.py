@@ -68,14 +68,14 @@ import os
 config = edict()
 
 # —— Dataset & I/O ——
-config.dataset          = "FV1_TRAIN_TEST_WITHOUT_AUGMENTATION"  # updated dataset name
+config.dataset          = "full_augmented_train_fv1"  # updated dataset name
 config.db_file_format   = "folder"
 # Path to non-augmented FV1 train/test data
-config.data_path        = "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data/FV1_TRAIN_TEST_WITHOUT_AUGMENTATION/train"
+config.data_path        = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data/full_augmented_train_fv1"
 # Directory where .bin verification protocols reside
-config.verification_path = "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data"
+config.verification_path = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data"
 # Output directory for fine-tuned checkpoints and logs
-config.output           = "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/output/headcrease/stage3"
+config.output           = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/output"
 
 # —— Model & Loss ——
 config.network          = "iresnet50"               # backbone architecture
@@ -120,7 +120,7 @@ config.lr_func = lr_step_func
 
 # —— Teacher Checkpoints ——
 config.pretrained_teacher_path        = (
-    "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/"
+    "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/"
     "output/AdaDistillref/best_backbone_epoch19.pth"
 )
 # Header path remains unchanged or set later as needed
