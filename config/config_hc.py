@@ -71,11 +71,11 @@ config = edict()
 config.dataset          = "full_augmented_train_fv1"  # updated dataset name
 config.db_file_format   = "folder"
 # Path to non-augmented FV1 train/test data
-config.data_path        = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data/full_augmented_train_fv1"
+config.data_path        = "/data/full_augmented_train_fv1"
 # Directory where .bin verification protocols reside
-config.verification_path = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data"
+config.verification_path = "/data"
 # Output directory for fine-tuned checkpoints and logs
-config.output           = "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/output"
+config.output           = "/output"
 
 # —— Model & Loss ——
 config.network          = "iresnet50"               # backbone architecture
@@ -104,7 +104,7 @@ config.val_targets      = ["fv1_test"]
 config.eval_step        = int(config.num_image / config.batch_size + 0.5)
 
 # —— Learning-Rate Schedule ——
-config.warmup_epoch     = 5                          # warmup for first 5 epochs
+config.warmup_epoch     = 5                          
 
 def lr_step_func(epoch):
     """
@@ -120,7 +120,7 @@ config.lr_func = lr_step_func
 
 # —— Teacher Checkpoints ——
 config.pretrained_teacher_path        = (
-    "/media/arjun/New Volume1/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/"
+    "AdaDistill/"
     "output/AdaDistillref/best_backbone_epoch19.pth"
 )
 # Header path remains unchanged or set later as needed
