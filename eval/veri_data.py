@@ -151,7 +151,7 @@ if __name__ == "__main__":
 
 '''how to run
 python veri_data.py \
-  --data_dir "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data/FV1_TRAIN_TEST_WITHOUT_AUGMENTATION/test" \
-  --out_bin  "/media/arjun/New Volume/DL_UbuntuFolderSSD/AdaDLProject/AdaDistill/data/headbandCrease/fv1_test.bin"
+  --data_dir "/data/FV1_TRAIN_TEST_WITHOUT_AUGMENTATION/test" \
+  --out_bin  "/data/headbandCrease/fv1_test.bin"
 
 '''
