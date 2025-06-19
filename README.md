@@ -1,15 +1,17 @@
 # AdaDistill HeadCrease
 
-## Paper
+An adaptation of **AdaDistill: Adaptive Knowledge Distillation for Deep Face Recognition** applied to forehead crease recognition under masked conditions.
+
+---
+
+## 📖 Paper
 
 **AdaDistill: Adaptive Knowledge Distillation for Deep Face Recognition**
-ECCV 2024 • [ArXiv](https://arxiv.org/abs/2407.01332)
+ECCV 2024 • [arXiv:2407.01332](https://arxiv.org/abs/2407.01332)
 
-## Problem
+---
 
-Recognize individuals by forehead crease patterns when masks cover most of the face.
-
-## Installation
+## 🚚 Installation
 
 ```bash
 git clone https://github.com/DennyiAnns523/Adafinetune.git
@@ -18,30 +20,48 @@ python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Data
+---
 
-* Place your HeadCrease dataset as:
+## 📂 Data
 
-  * `full_augmented/` (train)
-  * `no_augmentation/` (val)
-* Format: class‑labeled image folders
-* Contact maintainer for access
+Place your HeadCrease dataset with this structure:
 
-## Usage
-
-```bash
-# 1. Train the base DeepFace teacher on MS1Mv3 data
-bash run_standalone.sh
-
-# 2. Fine‑tune the teacher on the HeadCrease dataset
-bash run_fine_tune_teacher.sh
+```
+full_augmented/    # Train images (augmented)
+no_augmentation/    # Validation images
 ```
 
-## Results
+Each folder contains class-labeled subdirectories of images.
 
-Fine‑tuned teacher achieves \~97.7% verification accuracy and AUC >0.99 on the HeadCrease validation set.
+---
 
-## Citation
+## 🚀 Usage
+
+```bash
+# 1. Train DeepFace Teacher on MS1Mv3 data
+bash run_standalone.sh
+
+# 2. Fine-tune Teacher on HeadCrease dataset
+bash run_fine_tune_teacher.sh
+
+```
+
+---
+
+## 📊 Example Results
+
+```
+Verification Accuracy: 97.69%
+ROC AUC:             0.9971
+TAR @ FAR=1e-2:      0.9613 
+TAR @ FAR=1e-3:      0.9001 
+TAR @ FAR=1e-4:      0.7998
+```
+
+
+---
+
+## 📑 Citation
 
 ```bibtex
 @inproceedings{Boutros2024AdaDistill,
@@ -51,4 +71,7 @@ Fine‑tuned teacher achieves \~97.7% verification accuracy and AUC >0.99 on the
   year={2024}
 }
 ```
+
+---
+
 
